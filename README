@@ -87,6 +87,63 @@ Templates
         ]
     }
 }
+## Regions / Pixels / Color / OCR  
+{
+    "regions": {
+        "full": {
+            "name": "full",
+            "enabled": true,
+            "x": 0,
+            "y": 0,
+            "width": -1,
+            "height": -1,
+            "description": "Full capture area"
+        },
+        "top_bar": {
+            "name": "top_bar",
+            "enabled": true,
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 100,
+            "description": "Top bar area"
+        }
+    },
+    "color_checks": {
+        "black_pixel": {
+            "name": "black_pixel",
+            "enabled": true,
+            "x": 200,
+            "y": 200,
+            "color_space": "BGR",
+            "values": [0, 0, 0],
+            "tolerance": 30,  
+            "description": "Check for black pixel"
+        },
+        "white_pixel": {
+            "name": "white_pixel",
+            "enabled": true,
+            "x": 100,
+            "y": 100,
+            "color_space": "BGR",
+            "values": [255, 255, 255],
+            "tolerance": 20,
+            "description": "Check for white pixel"
+        }
+    },
+    "ocr_checks": {
+        "top_bar": {
+            "name": "top_bar",
+            "enabled": true,
+            "language": "eng",
+            "config": "--psm 6",
+            "description": "Read text from top bar",
+            "preprocess": true,
+            "interval": 5.0
+        }
+    }
+}
+
 
 3. Start automating! By running **csauron.py** 
 
