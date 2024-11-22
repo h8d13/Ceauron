@@ -87,59 +87,71 @@ Templates
         ]
     }
 }
-## Regions / Pixels / Color / OCR  
+## 
+Regions / Pixels / Color / OCR  
 {
+    // Regions define areas of the screen to monitor
     "regions": {
+        // Full screen region
         "full": {
             "name": "full",
-            "enabled": true,
-            "x": 0,
-            "y": 0,
-            "width": -1,
-            "height": -1,
+            "enabled": true,  // If false, region will be ignored
+            "x": 0,          // Start at left edge
+            "y": 0,          // Start at top edge
+            "width": -1,     // Special value -1 means use full screen width
+            "height": -1,    // Special value -1 means use full screen height
             "description": "Full capture area"
         },
+        // Specific region for top bar
         "top_bar": {
             "name": "top_bar",
             "enabled": true,
-            "x": 0,
-            "y": 0,
-            "width": 1920,
-            "height": 100,
+            "x": 0,          // Start at left edge
+            "y": 0,          // Start at top edge
+            "width": 1920,   // Fixed width in pixels
+            "height": 100,   // Fixed height in pixels
             "description": "Top bar area"
         }
     },
+
+    // Color checks define specific pixels to monitor for colors
     "color_checks": {
+        // Check for a black pixel
         "black_pixel": {
             "name": "black_pixel",
             "enabled": true,
-            "x": 200,
-            "y": 200,
-            "color_space": "BGR",
-            "values": [0, 0, 0],
-            "tolerance": 30,  
+            "x": 200,        // X coordinate to check
+            "y": 200,        // Y coordinate to check
+            "color_space": "BGR",  // Color space (BGR is OpenCV default)
+            "values": [0, 0, 0],   // BGR values: [Blue, Green, Red]
+            "tolerance": 30,        // How much variation is allowed (0-255)
             "description": "Check for black pixel"
         },
+        // Check for a white pixel
         "white_pixel": {
             "name": "white_pixel",
             "enabled": true,
             "x": 100,
             "y": 100,
             "color_space": "BGR",
-            "values": [255, 255, 255],
-            "tolerance": 20,
+            "values": [255, 255, 255],  // White in BGR
+            "tolerance": 20,            // Stricter tolerance for white
             "description": "Check for white pixel"
         }
     },
+
+    // OCR (Optical Character Recognition) checks for text recognition (needs tesseract installation)
     "ocr_checks": {
+        // OCR check for the top bar region
         "top_bar": {
             "name": "top_bar",
             "enabled": true,
-            "language": "eng",
-            "config": "--psm 6",
+            "language": "eng",       // Tesseract language code
+            "config": "--psm 6",     // Tesseract page segmentation mode
+                                    // PSM 6 = Assume uniform block of text
             "description": "Read text from top bar",
-            "preprocess": true,
-            "interval": 5.0
+            "preprocess": true,      // Apply image preprocessing before OCR
+            "interval": 5.0          // Check every 5 seconds
         }
     }
 }
