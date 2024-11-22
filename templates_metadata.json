@@ -1,0 +1,16 @@
+{
+    "Capture.PNG": {
+        "category": "Chrome Icons",
+        "value": 10,
+        "actions": [
+            
+            {
+                "action": "type_action",
+                "action_params": {
+                    "text": "Hello World from Sauron",
+                    "interval": 0.05
+                }
+            }
+        ]
+    }
+}

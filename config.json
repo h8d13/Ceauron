@@ -1,0 +1,21 @@
+{
+    "target_window": "Chromium",
+    "capture_interval": 4,
+    "template_dir": "templates",
+
+    "confidence_thresholds": {
+        "high": 0.8,
+        "medium": 0.5
+    },
+
+    "fullscreen": true,
+    "use_camera": false,
+    "camera_index": 0,
+    "camera_width": 640,
+    "camera_height": 480,
+    
+    "enable_ocr": true,
+    "enable_pixel_checks": true,
+    "enable_motion_detection": true,
+    "save_debug_images": true  
+}

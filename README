@@ -1,0 +1,92 @@
+INSTALLATION 
+
+# Zauron - Computer Vision Automation Tool
+
+Zauron is a computer vision automation tool that can detect templates, perform OCR, check pixel colors, and execute automated actions based on what it sees.
+
+## Features
+- Trying to make it cross-platform but should be q lot of testing on each (currently using Linux)
+
+- Multiple capture modes (Window, Fullscreen, Camera)
+- Template matching with confidence thresholds
+- Optical Character Recognition (OCR)
+- Color detection and pixel analysis
+- Motion detection
+- Automated actions based on detections
+- Debug image saving
+- Multi-threaded processing
+- Region-based analysis
+- Configurable intervals and thresholds
+
+## Prereq (run them one by one)
+
+pip3 install # Linux  
+pip install # Windows  
+
+numpy
+opencv-python
+pillow
+mss
+pyautogui
+pytesseract
+
+python-win32  # For Windows window management
+wmctrl       # For Linux window management
+pyobjc-framework-Quartz  # For MacOS window management
+
+## Installation
+
+1. Activate virtual env
+
+python -m venv .venv
+source .venv/bin/activate  # Linux/Mac
+# or
+.venv\Scripts\activate  # Windows
+
+2. Run **setup.py** file to get default json configs / directories
+- Creates a template foler, screenshots/processed
+- Creates templates metadata, regions config and main config file
+
+##
+Main config:
+
+{
+    "target_window": "Chromium",      // Window title to capture (if not fullscreen/camera)
+    "capture_interval": 4,            // Seconds between captures
+    "template_dir": "templates",      // Directory containing template images
+    "confidence_thresholds": {
+        "high": 0.8,                 // High confidence match threshold
+        "medium": 0.5                // Medium confidence match threshold
+    },
+    "fullscreen": true,              // Enable fullscreen capture
+    "use_camera": false,             // Enable camera capture
+    "camera_index": 0,               // Camera device index (only if camera is true)
+    "camera_width": 640,             // Camera capture width
+    "camera_height": 480,            // Camera capture height
+
+    "enable_ocr": true,              // Enable OCR processing (This slows down processing by about .2 seconds)
+    "enable_pixel_checks": true,      // Enable color/pixel analysis
+    "enable_motion_detection": true,  // Enable motion detection (Calculates change percentage between screenshots)
+    "save_debug_images": true        // Save debug images (This is not functional keep it on true)
+}
+##
+Templates
+
+{
+    "Capture.PNG": {                  // Template image filename (Careful case sensitive!)
+        "category": "Chrome Icons",   // Template category
+        "value": 10,                 // Template value/priority (Can be used for rewards :)
+        "actions": [                 // Actions to execute on match
+            {
+                "action": "type_action",
+                "action_params": {
+                    "text": "Hello World",
+                    "interval": 0.05
+                }
+            }
+        ]
+    }
+}
+
+3. Start automating! By running **csauron.py** 
+
