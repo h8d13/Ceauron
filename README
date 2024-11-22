@@ -106,8 +106,8 @@ Regions / Pixels / Color / OCR
         "top_bar": {
             "name": "top_bar",
             "enabled": true,
-            "x": 0,          // Start at left edge
-            "y": 0,          // Start at top edge
+            "x": 0,          // Start at left edge (offset)
+            "y": 0,          // Start at top edge (offset)
             "width": 1920,   // Fixed width in pixels
             "height": 100,   // Fixed height in pixels
             "description": "Top bar area"
