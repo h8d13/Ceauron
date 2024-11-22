@@ -5,7 +5,7 @@ INSTALLATION
 Zauron is a computer vision automation tool that can detect templates, perform OCR, check pixel colors, and execute automated actions based on what it sees.
 
 ## Features
-- Trying to make it cross-platform but should be a lot of testing on each (currently using Linux)
+- Trying to make it cross-platform but should be a lot of testing on each (currently using Linux to test)
 
 - Multiple capture modes (Window, Fullscreen, Camera)
 - Template matching with confidence thresholds
