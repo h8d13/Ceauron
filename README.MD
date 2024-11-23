@@ -189,8 +189,6 @@ python csauron.py
 
 This project is currently being tested primarily on Linux, with ongoing work to ensure cross-platform compatibility.
 
---------------------------------------------------------
-
                      ▄████████▄                     
                   ▄███▀░▒▒░░░░▀███▄  ░             
       ▄▄█▀▀ ░ ▄████▀░░░▒▒▒▒▒░░░▀████▄░░░▀▀█▄     
