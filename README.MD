@@ -1,6 +1,6 @@
 # Ceauron - Automation Tool
 
-A cross-platform computer vision system to detects templates, performs OCR, checks pixel colors, and executes automated actions based on visual input.
+Computer vision system to detects templates, performs OCR, checks pixel colors, and executes automated actions based on visual input.
 
 ## Features
 
