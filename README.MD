@@ -181,6 +181,10 @@ To start the automation:
 ```bash
 python csauron.py
 ```
+# Xanth
+
+Xanths are automation modules. Use cases with documentation.
+
 # Zigils
 
 Zigils are processing techniques that are callable within-in. 
@@ -189,20 +193,9 @@ Zigils are processing techniques that are callable within-in.
 - Recoloring
 - Etc
 
-# Xanth
-
-Xanths are automation modules. Use cases with documentation.
-
 # Zollum
 
 Zollum is the action manager which is currently under-development. 
-
-# 
-## Use Cases
-
-- Browser automation
-- Game automation
-- Visual monitoring and automation tasks
 
 ## Note
 
