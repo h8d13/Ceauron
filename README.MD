@@ -14,6 +14,7 @@ Computer vision system to detects templates, performs OCR, checks pixel colors, 
 - Motion detection 
 - Automated actions based on detection results
 
+## Performance oriented
 - Multi-threaded processing
 - Configurable 
 
