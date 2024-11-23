@@ -83,7 +83,21 @@ This will create:
 }
 ```
 
-Notes: OCR slows down processing (~0.3s) but can be used more periodically.
+Notes: OCR slows down processing (~0.3s) but can be used more periodically. Fullscreen or camera mode overides the target_window setting. 
+Careful that naming differs on platforms on windows:
+
+```bash
+# Windows
+GoogleChrome.exe
+
+# Linux
+Chromium
+
+# Mac
+.venv\Scripts\activate
+```
+
+
 
 ### Template Configuration
 
