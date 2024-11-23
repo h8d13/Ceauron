@@ -20,22 +20,7 @@ Computer vision system to detects templates, performs OCR, checks pixel colors, 
 
 ### 
 
-## Prerequisites
 
-### Linux
-```bash
-pip3 install numpy opencv-python pillow mss pyautogui pytesseract wmctrl
-```
-
-### Windows
-```bash
-pip install numpy opencv-python pillow mss pyautogui pytesseract python-win32
-```
-
-### MacOS
-```bash
-pip3 install numpy opencv-python pillow mss pyautogui pytesseract pyobjc-framework-Quartz
-```
 
 ## Installation
 
@@ -51,6 +36,23 @@ source .venv/bin/activate
 # Activate on Windows
 .venv\Scripts\activate
 ```
+## Prerequisites
+
+### Linux
+```bash
+pip3 install numpy opencv-python pillow mss pyautogui pytesseract wmctrl
+```
+
+### Windows
+```bash
+pip install numpy opencv-python pillow mss pyautogui pytesseract pywin32
+```
+
+### MacOS
+```bash
+pip3 install numpy opencv-python pillow mss pyautogui pytesseract pyobjc-framework-Quartz
+```
+
 
 2. Run setup script:
 ```bash
