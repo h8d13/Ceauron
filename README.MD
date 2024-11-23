@@ -8,7 +8,7 @@ Computer vision system to detects templates, performs OCR, checks pixel colors, 
   - Camera processing time: ~0.08s average
   - Screenshot processing time: ~0.3s average (could be reduced with downsizing and scale of template matches) 
 - ROI (Region of Interest) breakdown for targeted monitoring
-- Template matching with configurable confidence thresholds
+- Template matching with configurable confidence thresholds + Scaling (useful for changing or small items)
 - Optical Character Recognition (OCR) integration
 - Color detection and pixel analysis
 - Motion detection 
