@@ -24,9 +24,24 @@ A cross-platform computer vision automation tool that detects templates, perform
 sudo pip3 install numpy opencv-python pillow mss pyautogui pytesseract wmctrl
 
 ### Windows
+```bash
 pip install numpy opencv-python pillow mss pyautogui pytesseract python-win32
 
 ### Mac
-
+```bash
 pip3 install numpy opencv-python pillow mss pyautogui pytesseract pyobjc-framework-Quartz
 Not 100% sure for support as the libraries for low-level screenshots are dependant on distribution year of model. 
+
+# Installation
+
+1. Create and activate virtual environment:
+
+# Create virtual environment
+python -m venv .venv
+
+# Activate on Linux/Mac
+source .venv/bin/activate
+
+# Activate on Windows
+.venv\Scripts\activate
+
