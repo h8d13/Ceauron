@@ -6,7 +6,7 @@ A cross-platform computer vision automation tool that detects templates, perform
 
 - Multiple capture modes (Window, Fullscreen, Camera)
   - Camera processing time: ~0.08s average
-  - Screenshot processing time: ~0.3s average
+  - Screenshot processing time: ~0.3s average (could be reduced with downsizing and scale of template matches) 
 - ROI (Region of Interest) breakdown for targeted monitoring
 - Template matching with configurable confidence thresholds
 - Optical Character Recognition (OCR) integration
