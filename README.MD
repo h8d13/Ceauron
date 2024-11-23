@@ -11,7 +11,7 @@ A cross-platform computer vision automation tool that detects templates, perform
 - Template matching with configurable confidence thresholds
 - Optical Character Recognition (OCR) integration
 - Color detection and pixel analysis
-- Motion detection capabilities
+- Motion detection 
 - Automated actions based on detection results
 - Debug image saving functionality
 - Multi-threaded processing
