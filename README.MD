@@ -181,6 +181,14 @@ To start the automation:
 python csauron.py
 ```
 
+# Zigils
+
+Zigils are processing techniques that are callable within-in. 
+- Binary Thresholding (Edge detection)
+- Heatmaps 
+- Recoloring
+- Etc
+
 ## Use Cases
 
 - Browser automation
