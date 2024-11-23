@@ -177,7 +177,8 @@ Google Chrome
 ## Usage
 
 To start the automation:
-
+- Make sure to have at least 1 template (again metadata is case sensitive)
+Then run the main script:
 ```bash
 python csauron.py
 ```
