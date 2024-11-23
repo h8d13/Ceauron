@@ -115,7 +115,7 @@ Chromium
             {
                 "action": "type_action",
                 "action_params": {
-                    "text": "Hello World",
+                    "text": "Hello World from Ceauron",
                     "interval": 0.05
                 }
             }
