@@ -88,7 +88,7 @@ This will create:
 Notes: OCR slows down processing (~0.3s) but can be used more periodically. Fullscreen or camera mode overides the target_window setting. 
 Also keep the save_debug_images to true. 
 
-Careful that naming differs on platforms on windows:
+Careful that naming differs on platforms and is usually case sensitive (you can go in your ressource monitor to find the exact process handles):
 
 ```bash
 # Windows
