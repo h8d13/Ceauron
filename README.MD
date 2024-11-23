@@ -17,6 +17,8 @@ A cross-platform computer vision automation tool that detects templates, perform
 - Multi-threaded processing
 - Configurable intervals and thresholds
 
+### 
+
 ## Prerequisites
 
 ### Linux
