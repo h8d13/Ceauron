@@ -99,7 +99,7 @@ GoogleChrome.exe
 Chromium
 
 # Mac
-.venv\Scripts\activate
+Google Chrome
 ```
 
 
