@@ -84,6 +84,8 @@ This will create:
 ```
 
 Notes: OCR slows down processing (~0.3s) but can be used more periodically. Fullscreen or camera mode overides the target_window setting. 
+Also keep the save_debug_images to true. 
+
 Careful that naming differs on platforms on windows:
 
 ```bash
