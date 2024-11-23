@@ -189,6 +189,7 @@ python csauron.py
 
 This project is currently being tested primarily on Linux, with ongoing work to ensure cross-platform compatibility.
 
+```bash
                      ▄████████▄                     
                   ▄███▀░▒▒░░░░▀███▄  ░             
       ▄▄█▀▀ ░ ▄████▀░░░▒▒▒▒▒░░░▀████▄░░░▀▀█▄     
@@ -225,4 +226,4 @@ This project is currently being tested primarily on Linux, with ongoing work to 
     `8888888P'    8 888888888888 .8'       `8. `88888.    `Y88888P'   8 8888     `88.     `8888888P'     8            `Yo 
 -------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------
-
+```
