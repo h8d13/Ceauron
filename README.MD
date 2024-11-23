@@ -190,7 +190,7 @@ Zigils are processing techniques that are callable within-in.
 
 # Xanth
 
-Xanths are automation modules.
+Xanths are automation modules. Use cases with documentation.
 
 # Zollum
 
