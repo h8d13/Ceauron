@@ -1,4 +1,4 @@
-# Ceauron - CV2 & Automation
+# Ceauron - Automation Tool
 
 A cross-platform computer vision automation tool that detects templates, performs OCR, checks pixel colors, and executes automated actions based on visual input.
 
