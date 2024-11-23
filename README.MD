@@ -5,8 +5,8 @@ A cross-platform computer vision automation tool that detects templates, perform
 ## Features
 
 - Multiple capture modes (Window, Fullscreen, Camera)
- - Camera processing time: ~0.08s average
- - Screenshot processing time: ~0.3s average
+  - Camera processing time: ~0.08s average
+  - Screenshot processing time: ~0.3s average
 - ROI (Region of Interest) breakdown for targeted monitoring
 - Template matching with configurable confidence thresholds
 - Optical Character Recognition (OCR) integration
@@ -21,21 +21,24 @@ A cross-platform computer vision automation tool that detects templates, perform
 
 ### Linux
 ```bash
-sudo pip3 install numpy opencv-python pillow mss pyautogui pytesseract wmctrl
+pip3 install numpy opencv-python pillow mss pyautogui pytesseract wmctrl
+```
 
 ### Windows
 ```bash
 pip install numpy opencv-python pillow mss pyautogui pytesseract python-win32
+```
 
-### Mac
+### MacOS
 ```bash
 pip3 install numpy opencv-python pillow mss pyautogui pytesseract pyobjc-framework-Quartz
-Not 100% sure for support as the libraries for low-level screenshots are dependant on distribution year of model. 
+```
 
-# Installation
+## Installation
 
 1. Create and activate virtual environment:
 
+```bash
 # Create virtual environment
 python -m venv .venv
 
@@ -44,4 +47,126 @@ source .venv/bin/activate
 
 # Activate on Windows
 .venv\Scripts\activate
+```
 
+2. Run setup script:
+```bash
+python setup.py
+```
+This will create:
+- Template folder
+- Screenshots/processed directories
+- Default configuration files (templates metadata, regions config, main config)
+
+## Configuration
+
+### Main Configuration
+
+```json
+{
+    "target_window": "Chromium",
+    "capture_interval": 4,
+    "template_dir": "templates",
+    "confidence_thresholds": {
+        "high": 0.8,
+        "medium": 0.5
+    },
+    "fullscreen": true,
+    "use_camera": false,
+    "camera_index": 0,
+    "camera_width": 640,
+    "camera_height": 480,
+    "enable_ocr": true,
+    "enable_pixel_checks": true,
+    "enable_motion_detection": true,
+    "save_debug_images": true
+}
+```
+
+### Template Configuration
+
+```json
+{
+    "Capture.PNG": {
+        "category": "Chrome Icons",
+        "value": 10,
+        "actions": [
+            {
+                "action": "type_action",
+                "action_params": {
+                    "text": "Hello World",
+                    "interval": 0.05
+                }
+            }
+        ]
+    }
+}
+```
+
+### Regions, Pixels, and OCR Configuration
+
+```json
+{
+    "regions": {
+        "full": {
+            "name": "full",
+            "enabled": true,
+            "x": 0,
+            "y": 0,
+            "width": -1,
+            "height": -1,
+            "description": "Full capture area"
+        },
+        "top_bar": {
+            "name": "top_bar",
+            "enabled": true,
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 100,
+            "description": "Top bar area"
+        }
+    },
+    "color_checks": {
+        "black_pixel": {
+            "name": "black_pixel",
+            "enabled": true,
+            "x": 200,
+            "y": 200,
+            "color_space": "BGR",
+            "values": [0, 0, 0],
+            "tolerance": 30,
+            "description": "Check for black pixel"
+        }
+    },
+    "ocr_checks": {
+        "top_bar": {
+            "name": "top_bar",
+            "enabled": true,
+            "language": "eng",
+            "config": "--psm 6",
+            "description": "Read text from top bar",
+            "preprocess": true,
+            "interval": 5.0
+        }
+    }
+}
+```
+
+## Usage
+
+To start the automation:
+
+```bash
+python csauron.py
+```
+
+## Use Cases
+
+- Browser automation
+- Game automation
+- Visual monitoring and automation tasks
+
+## Note
+
+This project is currently being tested primarily on Linux, with ongoing work to ensure cross-platform compatibility.
