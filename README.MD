@@ -83,6 +83,8 @@ This will create:
 }
 ```
 
+Notes: OCR slows down processing (~0.3s) but can be used more periodically.
+
 ### Template Configuration
 
 ```json
