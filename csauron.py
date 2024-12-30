@@ -43,13 +43,8 @@ class WindowCapture:
             enable_motion_detection=self.config.enable_motion_detection
         )
         
-        # Initialize debug components if enabled
-        if self.config.save_debug_images:
-            self.logger = Logger('csauron_log.txt')
-            self.image_saver = ImageSaver()
-        else:
-            self.logger = None
-            self.image_saver = None
+        self.logger = Logger('csauron_log.txt')
+        self.image_saver = ImageSaver()
 
     def setup_execution_environment(self):
         self.processing_queue = queue.Queue(maxsize=5)

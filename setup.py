@@ -76,7 +76,7 @@ def create_regions_config_json():
 def create_templates_metadata_json():
     templates_metadata = {
         "Capture.PNG": {
-            "category": "Chrome Icons",
+            "category": "UI",
             "value": 10,
         }
     }
