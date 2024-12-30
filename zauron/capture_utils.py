@@ -36,7 +36,6 @@ class Config:
         self.camera_height = 480
 
         # Add new feature toggles with defaults
-        self.enable_ocr = True
         self.enable_pixel_checks = True
         self.enable_motion_detection = False
         self.save_debug_images = True
@@ -62,7 +61,6 @@ class Config:
             self.camera_height = config.get('camera_height', self.camera_height)
 
             # Load new feature toggles
-            self.enable_ocr = config.get('enable_ocr', self.enable_ocr)
             self.enable_pixel_checks = config.get('enable_pixel_checks', self.enable_pixel_checks)
             self.enable_motion_detection = config.get('enable_motion_detection', self.enable_motion_detection)
             self.save_debug_images = config.get('save_debug_images', self.save_debug_images)
@@ -79,7 +77,6 @@ class Template:
     image: np.ndarray
     category: str
     value: int
-    actions: List[Dict[str, Any]] = None  # List of actions with their parameters
 
 # LOAD TEMPLATES AND METADATA
 class TemplateManager:
@@ -106,7 +103,6 @@ class TemplateManager:
                         image=template_image,
                         category=template_info.get('category', 'uncategorized'),
                         value=template_info.get('value', 0),
-                        actions=template_info.get('actions', [])
                     ))
                 else:
                     print(f"Warning: Could not load template {filename}")
@@ -353,24 +349,3 @@ class ImageSaver:
             old_file = f'processed/processed_{old_timestamp}.png'
             if os.path.exists(old_file):
                 os.remove(old_file)
-
-# ACTION MANAGER
-class ActionManager:
-    def __init__(self):
-        self.actions = {}  # Map from action name to action functions
-
-    def register_action(self, key, action_function):
-        """Register an action function for a specific key (action name)."""
-        self.actions[key] = action_function
-
-    def execute_action(self, key, *args, **kwargs):
-        print(f"Executing action: {key} with args: {args} and kwargs: {kwargs}")
-        """Execute the action associated with the key."""
-        action = self.actions.get(key)
-        if action:
-            try:
-                action(*args, **kwargs)
-            except Exception as e:
-                print(f"Error executing action '{key}': {e}")
-        else:
-            print(f"No action registered for key: {key}")

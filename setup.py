@@ -15,7 +15,6 @@ def create_config_json():
         "camera_index": 0,
         "camera_width": 640,
         "camera_height": 480,
-        "enable_ocr": True,
         "enable_pixel_checks": True,
         "enable_motion_detection": True,
         "save_debug_images": True
@@ -68,17 +67,6 @@ def create_regions_config_json():
                 "tolerance": 20,
                 "description": "Check for white pixel"
             }
-        },
-        "ocr_checks": {
-            "top_bar": {
-                "name": "top_bar",
-                "enabled": True,
-                "language": "eng",
-                "config": "--psm 6",
-                "description": "Read text from top bar",
-                "preprocess": True,
-                "interval": 5.0
-            }
         }
     }
     
@@ -91,18 +79,8 @@ def create_templates_metadata_json():
         "Capture.PNG": {
             "category": "Chrome Icons",
             "value": 10,
-            "actions": [
-                {
-                    "action": "type_action",
-                    "action_params": {
-                        "text": "Hello World from Sauron",
-                        "interval": 0.05
-                    }
-                }
-            ]
         }
     }
-    
     with open('templates_metadata.json', 'w') as f:
         json.dump(templates_metadata, f, indent=4)
     print("Created templates_metadata.json")

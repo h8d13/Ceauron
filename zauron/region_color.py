@@ -27,7 +27,6 @@ class ColorCheck:
     values: List[int]
     tolerance: int
     description: str = ""
-    actions: List[Dict[str, Any]] = field(default_factory=list) 
 
 class RegionConfig:
     def __init__(self, config_file: str = 'regions_config.json'):
@@ -136,7 +135,7 @@ class ColorManager:
             diff = np.abs(pixel - check.values)
             match = np.all(diff <= check.tolerance)
 
-            return match, check.actions if match else []
+            return match if match else []
             
         except IndexError:
             return False, []
@@ -148,6 +147,6 @@ class ColorManager:
         results = []
         for name, check in self.color_checks.items():
             if check.enabled:
-                match, actions = self.check_color(image, current_color_space, name)
-                results.append((name, match, actions))
+                match = self.check_color(image, current_color_space, name)
+                results.append((name, match))
         return results

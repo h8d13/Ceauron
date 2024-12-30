@@ -1,6 +1,6 @@
 # Ceauron - Automation Tool
 
-Computer vision system to detects templates, performs OCR, checks pixel colors, and executes automated actions based on visual input.
+Computer vision system to detects templates, checks pixel colors based on ANY visual input.
 
 ## Features
 
@@ -9,10 +9,8 @@ Computer vision system to detects templates, performs OCR, checks pixel colors, 
   - Screenshot processing time: ~0.3s average on Linux and 0.15s on Windows (could be reduced with downsizing and scale of template matches) 
 - ROI (Region of Interest) breakdown for targeted monitoring
 - Template matching with configurable confidence thresholds + Scaling (useful for changing or small items)
-- Optical Character Recognition (OCR) integration
 - Color detection and pixel analysis
 - Motion detection 
-- Automated actions based on detection results
 
 ## Performance oriented
 - Multi-threaded processing
@@ -40,17 +38,17 @@ source .venv/bin/activate
 
 ### Linux
 ```bash
-pip3 install numpy opencv-python pillow mss pyautogui pytesseract wmctrl
+pip3 install numpy opencv-python pillow mss pyautogui wmctrl
 ```
 
 ### Windows
 ```bash
-pip install numpy opencv-python pillow mss pyautogui pytesseract pywin32
+pip install numpy opencv-python pillow mss pyautogui pywin32
 ```
 
 ### MacOS
 ```bash
-pip3 install numpy opencv-python pillow mss pyautogui pytesseract pyobjc-framework-Quartz
+pip3 install numpy opencv-python pillow mss pyautogui pyobjc-framework-Quartz
 ```
 
 
@@ -81,14 +79,12 @@ This will create:
     "camera_index": 0,
     "camera_width": 640,
     "camera_height": 480,
-    "enable_ocr": true,
     "enable_pixel_checks": true,
     "enable_motion_detection": true,
     "save_debug_images": true
 }
 ```
 
-Notes: OCR slows down processing (~0.3s) but can be used more periodically. 
 Fullscreen or camera mode overides the target_window setting. 
 Also keep the save_debug_images to true. 
 
@@ -105,29 +101,18 @@ Chromium
 Google Chrome
 ```
 
-
-
 ### Template Configuration
 
 ```json
 {
     "Capture.PNG": {
         "category": "Chrome Icons",
-        "value": 10,
-        "actions": [
-            {
-                "action": "type_action",
-                "action_params": {
-                    "text": "Hello World from Ceauron",
-                    "interval": 0.05
-                }
-            }
-        ]
+        "value": 10
     }
 }
 ```
 
-### Regions, Pixels, and OCR Configuration
+### Regions, Pixels
 
 ```json
 {
@@ -162,17 +147,6 @@ Google Chrome
             "tolerance": 30,
             "description": "Check for black pixel"
         }
-    },
-    "ocr_checks": {
-        "top_bar": {
-            "name": "top_bar",
-            "enabled": true,
-            "language": "eng",
-            "config": "--psm 6",
-            "description": "Read text from top bar",
-            "preprocess": true,
-            "interval": 5.0
-        }
     }
 }
 ```
@@ -187,7 +161,7 @@ python csauron.py
 ```
 # Xanth
 
-Xanths are automation modules. Use cases with documentation.
+Xanths are automation modules
 
 # Zigils
 
