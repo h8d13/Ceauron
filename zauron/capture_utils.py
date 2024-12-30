@@ -38,7 +38,6 @@ class Config:
         # Add new feature toggles with defaults
         self.enable_pixel_checks = True
         self.enable_motion_detection = False
-        self.save_debug_images = True
 
         self.load_config()
 
@@ -63,7 +62,6 @@ class Config:
             # Load new feature toggles
             self.enable_pixel_checks = config.get('enable_pixel_checks', self.enable_pixel_checks)
             self.enable_motion_detection = config.get('enable_motion_detection', self.enable_motion_detection)
-            self.save_debug_images = config.get('save_debug_images', self.save_debug_images)
 
         except FileNotFoundError:
             print(f"Config file {self.config_file} not found. Using defaults.")

@@ -126,8 +126,6 @@ class ImageProcessor:
             log_entries.append(
                 f"Conf: {confidence:.4f} ({confidence_level})\n"
                 f"Match: {template.name} Scale: {scale:.2f}\n"
-                f"Category: {template.category}\n"
-                f"Value: {template.value}\n"
                 f"Pos: ({startX}, {startY}):({endX}, {endY})\n"
                 f"Abs: ({abs_startX}, {abs_startY}):({abs_endX}, {abs_endY})"
             )
