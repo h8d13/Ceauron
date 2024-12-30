@@ -10,6 +10,7 @@ import os
 import shutil
 
 from zauron.capture_utils import Config, TemplateManager, WindowManager, ScreenshotManager, Logger, ImageSaver, CameraManager
+
 from zauron.capture_processor import ImageProcessor
 
 class WindowCapture:
@@ -38,7 +39,6 @@ class WindowCapture:
             self.config,  # Pass the config object
             self.template_manager.templates,
             'regions_config.json',
-            enable_ocr=self.config.enable_ocr,
             enable_pixel_checks=self.config.enable_pixel_checks,
             enable_motion_detection=self.config.enable_motion_detection
         )
@@ -57,7 +57,6 @@ class WindowCapture:
         self.paused = False
         self.last_capture_time = 0
         self.executor = ThreadPoolExecutor(max_workers=4)
-        self.action_queue = queue.Queue()
 
     def handle_exception(self, error_message):
         print(f"Error: {error_message}")
@@ -114,14 +113,11 @@ class WindowCapture:
     def process_image(self, img, window_position):
         try:
             start_time = time.time()
-            timestamp, processed_img, log_entries, actions_to_execute = self.image_processor.process_image_with_actions(img, window_position)
+            timestamp, processed_img, log_entries = self.image_processor.process_image(img, window_position)
             self.logger.write_log(timestamp, log_entries)
             self.image_saver.save_processed_image(timestamp, processed_img)
             if not isinstance(img, np.ndarray):
                 img = np.array(img)
-            # Put actions into the action queue
-            for action_name, action_params in actions_to_execute:
-                self.action_queue.put((action_name, action_params))
             processing_time = time.time() - start_time
             print(f"Screenshot processed in {processing_time:.3f} seconds")
         except Exception:
@@ -132,10 +128,6 @@ class WindowCapture:
 
     def stop_capture(self):
         self.running = False
-        if hasattr(self, 'image_processor'):
-            self.image_processor.ocr_manager.stop()
-        if self.camera_manager:
-            self.camera_manager.release()
 
     # MAIN LOOP
     def run(self):
@@ -148,14 +140,8 @@ class WindowCapture:
 
         try:
             while self.running:
-                time.sleep(0.01)
-                # Process actions from the queue
-                try:
-                    while not self.action_queue.empty():
-                        action_name, action_params = self.action_queue.get_nowait()
-                        self.image_processor.action_manager.execute_action(action_name, **action_params)
-                except queue.Empty:
-                    pass
+                time.sleep(0.05) ## Prevent CPU fuckery
+
         except KeyboardInterrupt:
             self.stop_capture()
         except Exception:

@@ -6,23 +6,12 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 import traceback
 
-from zauron.ocr_manager import OCRManager
 from zauron.region_color import RegionConfig, RegionManager, ColorManager
-from zauron.capture_utils import ActionManager
-from zollum.actions import (
-    click_action,
-    double_click_action,
-    right_click_action,
-    drag_action,
-    move_action,
-    type_action,
-    press_key_action
-)
 
 ## MAIN PROCESSOR
 class ImageProcessor:
     def __init__(self, config, templates, region_config_file='regions_config.json',
-                 enable_ocr=True, enable_pixel_checks=True, enable_motion_detection=False):
+                enable_pixel_checks=True, enable_motion_detection=False):
         self.config = config  
         self.confidence_threshold = config.confidence_thresholds
         self.templates = templates
@@ -30,7 +19,6 @@ class ImageProcessor:
         self.executor = ThreadPoolExecutor(max_workers=4)
 
         # Feature flags
-        self.enable_ocr = enable_ocr
         self.enable_pixel_checks = enable_pixel_checks
         self.enable_motion_detection = enable_motion_detection
 
@@ -40,12 +28,6 @@ class ImageProcessor:
         
         if self.enable_pixel_checks:
             self.color_manager = ColorManager(self.region_config)
-        
-        if self.enable_ocr:
-            self.ocr_manager = OCRManager(self.region_config.config)
-            
-        self.action_manager = ActionManager()
-        self.register_actions()
 
 
     def adjust_positions(self, result, region_offset):
@@ -64,21 +46,10 @@ class ImageProcessor:
         endY += region_offset[1]
         
         return (template, startX, startY, endX, endY, scale, confidence)
-
-    def register_actions(self):## NOT ALL FUNCTIONAL 
-
-        self.action_manager.register_action('click_action', click_action)
-        self.action_manager.register_action('double_click_action', double_click_action)
-        self.action_manager.register_action('right_click_action', right_click_action)
-        self.action_manager.register_action('drag_action', drag_action)
-        self.action_manager.register_action('move_action', move_action)
-        self.action_manager.register_action('type_action', type_action)
-        self.action_manager.register_action('press_key_action', press_key_action)
         
-    def process_image_with_actions(self, img, window_position):
+    def process_image(self, img, window_position):
         timestamp = time.time()
         log_entries = []
-        actions_to_execute = []
 
         # Convert image once for all processing
         img_cv = cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR)
@@ -86,12 +57,6 @@ class ImageProcessor:
 
         # Process each region
         regions = self.region_manager.get_all_regions(img_cv)
-        
-        # Get OCR results (non-blocking)
-        if self.enable_ocr:
-            ocr_results = self.ocr_manager.check_all_regions(regions)
-            for region_name, text in ocr_results.items():
-                log_entries.append(f"OCR {region_name}: {text}")
 
        # DEBUG ROIs
         for region_name, (region_img, region_offset) in regions.items():
@@ -105,17 +70,14 @@ class ImageProcessor:
                 if result is not None:
                     adjusted_result = self.adjust_positions(result, region_offset)
                     if adjusted_result:
-                        log_entry, actions = self.process_template_result(adjusted_result, window_position, img_cv)
+                        log_entry = self.process_template_result(adjusted_result, window_position, img_cv)
                         log_entries.extend(log_entry)
-                        actions_to_execute.extend(actions)
 
         # Color checking if enabled
         if self.enable_pixel_checks:
             color_results = self.color_manager.check_all_colors(img_cv, 'BGR')
-            for name, match, actions in color_results:
+            for name, match in color_results:
                 log_entries.append(f"Color check '{name}': {'Match' if match else 'No match'}")
-                if match:
-                    actions_to_execute.extend(actions)
 
         # Motion detection if enabled
         if self.enable_motion_detection and self.previous_frame is not None:
@@ -126,7 +88,7 @@ class ImageProcessor:
        # SET PREVIOUS FOR CHANGE DETECTING 
         self.previous_frame = img_gray
 
-        return timestamp, img_cv, log_entries, actions_to_execute
+        return timestamp, img_cv, log_entries
 
     def match_templates(self, img_gray, templates):
         with ThreadPoolExecutor(max_workers=4) as executor:
@@ -149,7 +111,6 @@ class ImageProcessor:
             abs_endX, abs_endY = window_position[0] + endX, window_position[1] + endY
 
             log_entries = []
-            actions_to_execute = []
             
             # Check confidence levels and color-code accordingly
             if confidence >= self.config.confidence_thresholds['high']:
@@ -172,24 +133,8 @@ class ImageProcessor:
             )
             print(f"{confidence_level} confidence detected: {template.name} (Confidence: {confidence:.4f})")
 
-            # Execute actions for high and medium confidence
-            if confidence >= self.config.confidence_thresholds['medium'] and template.actions:
-                for action_info in template.actions:
-                    action_name = action_info.get('action')
-                    action_params = action_info.get('action_params', {}).copy()
-                    
-                    if 'x' in action_params and 'y' in action_params:
-                        if action_params['x'] is None and action_params['y'] is None:
-                            center_x = abs_startX + (abs_endX - abs_startX) // 2
-                            center_y = abs_startY + (abs_endY - abs_startY) // 2
-                            action_params.update({'x': center_x, 'y': center_y})
-                        else:
-                            action_params['x'] = window_x + action_params['x']
-                            action_params['y'] = window_y + action_params['y']
-                    
-                    actions_to_execute.append((action_name, action_params))
 
-            return log_entries, actions_to_execute
+            return log_entries
 
         except Exception:
             print("Error in process_template_result:")
