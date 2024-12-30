@@ -7,11 +7,10 @@
         "medium": 0.5
     },
     "fullscreen": true,
-    "use_camera": true,
+    "use_camera": false,
     "camera_index": 0,
     "camera_width": 640,
     "camera_height": 480,
     "enable_pixel_checks": true,
-    "enable_motion_detection": true,
-    "save_debug_images": true
+    "enable_motion_detection": true
 }

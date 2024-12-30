@@ -1,62 +1,357 @@
-Timestamp: 1735518362.2435906
-ROI Size: (480, 640, 3)
+Timestamp: 1735520195.955513
+ROI Size: (1080, 1920, 3)
 ROI Offset: (0, 0)
-Conf: 0.2166 (LOW)
+Conf: 0.1800 (LOW)
+Match: Capture.PNG Scale: 0.65
+Category: Chrome Icons
+Value: 10
+Pos: (569, 40):(714, 107)
+Abs: (569, 40):(714, 107)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
 Match: Capture.PNG Scale: 1.00
 Category: Chrome Icons
 Value: 10
-Pos: (356, 371):(450, 415)
-Abs: (356, 371):(450, 415)
-ROI Size: (100, 640, 3)
-ROI Offset: (0, 0)
-Conf: 0.1690 (LOW)
-Match: Capture.PNG Scale: 1.00
-Category: Chrome Icons
-Value: 10
-Pos: (276, 12):(370, 56)
-Abs: (276, 12):(370, 56)
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
 Color check 'black_pixel': Match
 Color check 'white_pixel': No match
-CS: 0.16%
+CS: 0.73%
 --------------------------------------------------
-Timestamp: 1735519085.0911858
-ROI Size: (480, 640, 3)
+Timestamp: 1735520199.9825954
+ROI Size: (1080, 1920, 3)
 ROI Offset: (0, 0)
-Conf: 0.2033 (LOW)
+Conf: 0.1800 (LOW)
+Match: Capture.PNG Scale: 0.65
+Category: Chrome Icons
+Value: 10
+Pos: (569, 40):(714, 107)
+Abs: (569, 40):(714, 107)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
 Match: Capture.PNG Scale: 1.00
 Category: Chrome Icons
 Value: 10
-Pos: (272, 287):(366, 331)
-Abs: (272, 287):(366, 331)
-ROI Size: (100, 640, 3)
-ROI Offset: (0, 0)
-Conf: 0.1465 (LOW)
-Match: Capture.PNG Scale: 1.00
-Category: Chrome Icons
-Value: 10
-Pos: (331, 21):(425, 65)
-Abs: (331, 21):(425, 65)
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
 Color check 'black_pixel': Match
 Color check 'white_pixel': No match
+CS: 0.48%
 --------------------------------------------------
-Timestamp: 1735519088.317127
-ROI Size: (480, 640, 3)
+Timestamp: 1735520203.974427
+ROI Size: (1080, 1920, 3)
 ROI Offset: (0, 0)
-Conf: 0.2289 (LOW)
+Conf: 0.1800 (LOW)
+Match: Capture.PNG Scale: 0.65
+Category: Chrome Icons
+Value: 10
+Pos: (569, 40):(714, 107)
+Abs: (569, 40):(714, 107)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
 Match: Capture.PNG Scale: 1.00
 Category: Chrome Icons
 Value: 10
-Pos: (273, 287):(367, 331)
-Abs: (273, 287):(367, 331)
-ROI Size: (100, 640, 3)
-ROI Offset: (0, 0)
-Conf: 0.1382 (LOW)
-Match: Capture.PNG Scale: 1.00
-Category: Chrome Icons
-Value: 10
-Pos: (147, 14):(241, 58)
-Abs: (147, 14):(241, 58)
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
 Color check 'black_pixel': Match
 Color check 'white_pixel': No match
-CS: 0.10%
+CS: 0.28%
+--------------------------------------------------
+Timestamp: 1735520207.9784472
+ROI Size: (1080, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1800 (LOW)
+Match: Capture.PNG Scale: 0.65
+Category: Chrome Icons
+Value: 10
+Pos: (569, 40):(714, 107)
+Abs: (569, 40):(714, 107)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
+Color check 'black_pixel': Match
+Color check 'white_pixel': No match
+CS: 0.07%
+--------------------------------------------------
+Timestamp: 1735520211.990083
+ROI Size: (1080, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.2091 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1700, 101):(1794, 145)
+Abs: (1700, 101):(1794, 145)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
+Color check 'black_pixel': Match
+Color check 'white_pixel': No match
+CS: 0.80%
+--------------------------------------------------
+Timestamp: 1735520215.9859328
+ROI Size: (1080, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.2091 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1700, 101):(1794, 145)
+Abs: (1700, 101):(1794, 145)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
+Color check 'black_pixel': Match
+Color check 'white_pixel': No match
+CS: 0.07%
+--------------------------------------------------
+Timestamp: 1735520219.9993896
+ROI Size: (1080, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.2091 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1700, 101):(1794, 145)
+Abs: (1700, 101):(1794, 145)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
+Color check 'black_pixel': Match
+Color check 'white_pixel': No match
+CS: 0.06%
+--------------------------------------------------
+Timestamp: 1735520224.0081131
+ROI Size: (1080, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.2091 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1700, 101):(1794, 145)
+Abs: (1700, 101):(1794, 145)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
+Color check 'black_pixel': Match
+Color check 'white_pixel': No match
+CS: 0.05%
+--------------------------------------------------
+Timestamp: 1735520228.006276
+ROI Size: (1080, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.2091 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1700, 101):(1794, 145)
+Abs: (1700, 101):(1794, 145)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
+Color check 'black_pixel': Match
+Color check 'white_pixel': No match
+CS: 0.04%
+--------------------------------------------------
+Timestamp: 1735520232.0048034
+ROI Size: (1080, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.2091 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1700, 101):(1794, 145)
+Abs: (1700, 101):(1794, 145)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
+Color check 'black_pixel': Match
+Color check 'white_pixel': No match
+CS: 0.05%
+--------------------------------------------------
+Timestamp: 1735520236.0135703
+ROI Size: (1080, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.2091 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1700, 101):(1794, 145)
+Abs: (1700, 101):(1794, 145)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
+Color check 'black_pixel': Match
+Color check 'white_pixel': No match
+CS: 0.97%
+--------------------------------------------------
+Timestamp: 1735520240.015177
+ROI Size: (1080, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.2091 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1700, 101):(1794, 145)
+Abs: (1700, 101):(1794, 145)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
+Color check 'black_pixel': Match
+Color check 'white_pixel': No match
+CS: 0.99%
+--------------------------------------------------
+Timestamp: 1735520244.0245998
+ROI Size: (1080, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.2091 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1700, 101):(1794, 145)
+Abs: (1700, 101):(1794, 145)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
+Color check 'black_pixel': Match
+Color check 'white_pixel': No match
+CS: 1.08%
+--------------------------------------------------
+Timestamp: 1735520248.032957
+ROI Size: (1080, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.2091 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1700, 101):(1794, 145)
+Abs: (1700, 101):(1794, 145)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
+Color check 'black_pixel': Match
+Color check 'white_pixel': No match
+CS: 0.89%
+--------------------------------------------------
+Timestamp: 1735520252.036992
+ROI Size: (1080, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.2091 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1700, 101):(1794, 145)
+Abs: (1700, 101):(1794, 145)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
+Color check 'black_pixel': Match
+Color check 'white_pixel': No match
+CS: 0.93%
+--------------------------------------------------
+Timestamp: 1735520256.0381575
+ROI Size: (1080, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.2091 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1700, 101):(1794, 145)
+Abs: (1700, 101):(1794, 145)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
+Color check 'black_pixel': Match
+Color check 'white_pixel': No match
+CS: 0.56%
+--------------------------------------------------
+Timestamp: 1735520260.040849
+ROI Size: (1080, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.2091 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1700, 101):(1794, 145)
+Abs: (1700, 101):(1794, 145)
+ROI Size: (100, 1920, 3)
+ROI Offset: (0, 0)
+Conf: 0.1686 (LOW)
+Match: Capture.PNG Scale: 1.00
+Category: Chrome Icons
+Value: 10
+Pos: (1117, 4):(1211, 48)
+Abs: (1117, 4):(1211, 48)
+Color check 'black_pixel': Match
+Color check 'white_pixel': No match
+CS: 0.88%
 --------------------------------------------------

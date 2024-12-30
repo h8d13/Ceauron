@@ -17,7 +17,6 @@ def create_config_json():
         "camera_height": 480,
         "enable_pixel_checks": True,
         "enable_motion_detection": True,
-        "save_debug_images": True
     }
     
     with open('config.json', 'w') as f:
