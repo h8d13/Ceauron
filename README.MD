@@ -5,7 +5,7 @@ Computer vision system to detects templates, checks pixel colors based on ANY vi
 ## Features
 
 - Multiple capture modes (Window, Fullscreen, Camera)
-  - Camera processing time: ~0.08s average
+  - Camera processing time: ~0.03s to 0.1s average
   - Screenshot processing time: ~0.3s average on Linux and 0.15s on Windows (could be reduced with downsizing and scale of template matches) 
 - ROI (Region of Interest) breakdown for targeted monitoring
 - Template matching with configurable confidence thresholds + Scaling (useful for changing or small items)
