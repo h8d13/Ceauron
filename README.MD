@@ -6,7 +6,7 @@ Computer vision system to detects templates, checks pixel colors based on ANY vi
 
 - Multiple capture modes (Window, Fullscreen, Camera)
   - Camera processing time: ~0.03s to 0.1s average
-  - Screenshot processing time: ~0.1s average on Linux and 0.15s on Windows (could be reduced with downsizing and scale of template matches) 
+  - Screenshot processing time: ~0.3s average on Linux and 0.15s on Windows (could be reduced with downsizing and scale of template matches) 
 - ROI (Region of Interest) breakdown for targeted monitoring
 - Template matching with configurable confidence thresholds + Scaling (useful for changing or small items)
 - Color detection and pixel analysis
@@ -80,13 +80,11 @@ This will create:
     "camera_width": 640,
     "camera_height": 480,
     "enable_pixel_checks": true,
-    "enable_motion_detection": true,
-    "save_debug_images": true
+    "enable_motion_detection": true
 }
 ```
 
 Fullscreen or camera mode overides the target_window setting. 
-Also keep the save_debug_images to true. 
 
 Careful that naming differs on platforms and is usually case sensitive (you can go in your ressource monitor to find the exact process handles):
 
