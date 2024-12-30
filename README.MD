@@ -11,6 +11,7 @@ Computer vision system to detects templates, checks pixel colors based on ANY vi
 - Template matching with configurable confidence thresholds + Scaling (useful for changing or small items)
 - Color detection and pixel analysis
 - Motion detection 
+- Logging system for detailed information
 
 ## Performance oriented
 - Multi-threaded processing
